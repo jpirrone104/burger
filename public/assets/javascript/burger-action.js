@@ -13,7 +13,7 @@ $(function() {
         data: eatBurgerStatus
       }).then(
         function() {
-          console.log("changed sleep to", eatBurger);
+          console.log(eatBurger);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -35,7 +35,22 @@ $(function() {
         data: newBurger
       }).then(
         function() {
-          console.log("created new cat");
+          console.log("Ordered New Burger");
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
+
+    $(".delete-burger").on("click", function(event) {
+      var id = $(this).data("id");
+  
+      // Send the DELETE request.
+      $.ajax("/burgers/" + id, {
+        type: "DELETE"
+      }).then(
+        function() {
+          console.log("deleted burger", id);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -43,4 +58,6 @@ $(function() {
     });
   
   });
+
+  
   
