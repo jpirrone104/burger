@@ -1,9 +1,13 @@
-body {
-    background-color: mediumaquamarine;
-};
 
-.jumbotron {
+
+button {
+    padding: .5 em;
+}
+
+header {
+    display: inline-block;
+}
+
+.wrapper {
     text-align: center;
-    align-content: center;
-    align-items: center;
 }
